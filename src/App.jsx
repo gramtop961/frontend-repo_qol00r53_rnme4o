@@ -1,28 +1,27 @@
-import { useState } from 'react'
+import React from 'react';
+import Navbar from './components/Navbar.jsx';
+import Hero3D from './components/Hero3D.jsx';
+import ProjectsGallery from './components/ProjectsGallery.jsx';
+import ContactFooter from './components/ContactFooter.jsx';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-950 via-slate-900 to-slate-950 text-slate-100">
+      <Navbar />
 
-export default App
+      <main>
+        <section id="home" className="relative h-[90vh] sm:h-[85vh]">
+          <Hero3D />
+        </section>
+
+        <section id="projects" className="py-20 sm:py-24">
+          <ProjectsGallery />
+        </section>
+
+        <section id="contact" className="py-16">
+          <ContactFooter />
+        </section>
+      </main>
+    </div>
+  );
+}
